@@ -68,12 +68,13 @@ Os alunos devem escolher **uma** das temáticas abaixo para desenvolver o projet
 ## 📅 Grupos & Temas
 
 
-| Grupo 1 | Grupo 2 | Grupo 3 | Grupo 4 | Grupo 5 |
-|:--------|:--------|:--------|:--------|:--------|
-| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
-| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
-| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
-| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
+| Grupo 1          | Grupo 2        | Grupo 3       | Grupo 4 | Grupo 5         | Grupo 6 |
+|:-----------------|:---------------|:--------------|:--------|:----------------|:--------|
+| Mateus Natan     | Cauã           | Gabriel Reis  | Andreza | Fernando Arnold |         |            
+| Paulo Elias      | Isac           | Adolfo        | Tales   | Vinicius        |         |            
+| Rafael Augusto   | Lucas Leal     | Miqueias      | Regiane | Jean Alex       |         |            
+| Thomas Jefferson | Pedro Henrique | Lucas Argenta | Brisa   | Pedro Gabriel   |         |
+|                  |                |               | Natali  |                 |         |
 
 
 | Grupo |   Tema |
