@@ -65,12 +65,34 @@ Os alunos devem escolher **uma** das temáticas abaixo para desenvolver o projet
 | Organização e clareza do relatório           | 10%  |
 
 ---
+## 📅 Grupos & Temas
+
+
+| Grupo 1 | Grupo 2 | Grupo 3 | Grupo 4 | Grupo 5 |
+|:--------|:--------|:--------|:--------|:--------|
+| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
+| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
+| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
+| Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 | Aluno 1 |            
+
+
+| Grupo |   Tema |
+|:------|-------:|
+| G-01  |        |
+| G-02  |        |
+| G-03  |        |
+| G-04  |        |
+| G-05  |        |
+
+
+
+---
 
 ## 📅 Datas Importantes
 
-- **Entrega da proposta do projeto:** _[data a definir]_
-- **Entrega do projeto final:** _[data a definir]_
-- **Apresentações:** _[data a definir]_
+- **Discussão pré-projeto:** _[05/06/2025]_
+- **Entrega do projeto final:** _[12/06/2025]_
+- **Apresentações:** _[12/06/2025]_
 
 ---
 
