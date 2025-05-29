@@ -1,76 +1,72 @@
-# Tema 2 — Extração de Entidades Nomeadas com LLMs
+# Tema 3 — Sumarização de Texto com LLMs
 
 ## 🎯 Objetivo Específico
 
-Treinar e avaliar modelos baseados em transformers (como BERTimbau, XLM-RoBERTa ou DistilBERT) para realizar a **extração de entidades nomeadas** em textos jornalísticos ou documentos públicos em português. A tarefa consiste em identificar entidades como **pessoas, locais, organizações, eventos, entre outras**.
+Treinar e/ou aplicar modelos baseados em transformers para realizar **sumarização automática** de textos longos ou curtos em português, como notícias, artigos acadêmicos ou textos de redes sociais. A tarefa consiste em **gerar um resumo coerente e informativo**, preservando os pontos principais do conteúdo original.
 
 ---
 
 ## 📚 Sugestões de Datasets Públicos em Português
 
-### 1. **HAREM (Linguateca)**
-- **Descrição**: Conjunto de textos anotados com entidades nomeadas para a língua portuguesa (europeu e brasileiro).
-- **Fonte**: [https://www.linguateca.pt/HAREM/](https://www.linguateca.pt/HAREM/)
-- **Formato**: XML com anotações padronizadas para tarefas NER.
+### 1. **CSTNews**
+- **Descrição**: Corpus de textos jornalísticos em português, com resumos humanos anotados.
+- **Fonte**: [https://github.com/linhd-postags/cstnews-corpus](https://github.com/linhd-postags/cstnews-corpus)
+- **Tamanho**: Pequeno (~140 documentos), mas ideal para fine-tuning controlado.
 
-### 2. **PortugueseNER (Peixeleao)**
-- **Descrição**: Corpus com frases e anotações BIO para pessoas, locais e organizações.
-- **Fonte**: [GitHub - peixeleao/PortugueseNER](https://github.com/peixeleao/PortugueseNER)
-- **Formato**: `.tsv` com estrutura já pronta para treinamento com Hugging Face.
+### 2. **PUD_BR + Wikipedia Headlines**
+- **Descrição**: Pode-se usar o cabeçalho de notícias como resumo e o corpo como entrada.
+- **Observação**: Requer pré-processamento heurístico.
 
-### 3. **BrWaC + Anotações Fracas**
-- **Descrição**: Corpus extenso da web brasileira. Pode ser usado com anotações fracas (distant supervision).
-- **Fonte**: [Corpus BrWaC](https://www.linguateca.pt/Repositorio/BrWaC/)
-- **Observação**: Requer heurísticas ou uso de modelos pré-treinados para gerar pseudo-rótulos.
+### 3. **CNN/Brazilian News Dataset (Extração Customizada)**
+- **Descrição**: Pode ser criado com scraping de portais como G1, UOL, ou Globo, com título como resumo e corpo como conteúdo.
+- **Legalidade**: Apenas para uso educacional e experimental.
 
 ---
 
 ## 📦 Requisitos Objetivos para o Projeto
 
-1. **Pré-processamento dos textos** (remoção de ruído, formatação BIO ou similar)
-2. Uso de um **modelo transformer para token classification**
-3. Divisão do dataset em **treino, validação e teste**
-4. Treinamento com `Trainer` da Hugging Face ou outro framework compatível
-5. Avaliação com métricas específicas de NER (F1, precision, recall por entidade)
-6. Visualização das entidades reconhecidas em trechos de texto
-7. Relatório com **análise dos erros, limitações do modelo e sugestões de melhoria**
-8. Organização do código em **notebook limpo, com comentários e reprodutibilidade**
-9. Explicitação do **mapa de entidades anotadas** e categorias suportadas
+1. Escolher ou criar um dataset com **pares (texto original, resumo)**
+2. Pré-processamento (remoção de HTML, truncamento de entrada se necessário)
+3. Aplicar modelo pré-treinado com ou sem fine-tuning
+4. Avaliar com métricas automáticas de sumarização
+5. Comparar o desempenho entre abordagens extractivas e abstrativas (se possível)
+6. Organizar o código em **notebook reprodutível**
+7. Relatório final com análise qualitativa e quantitativa dos resumos gerados
 
 ---
 
 ## 📊 Métricas de Avaliação
 
-### 1. **Precision, Recall e F1-score por entidade**
-- Avaliação padrão em tarefas de NER.
-- Exemplo: F1 para "LOC", "PER", "ORG" separadamente.
+### 1. **ROUGE (Recall-Oriented Understudy for Gisting Evaluation)**
+- **ROUGE-1**: sobre uni-gramas
+- **ROUGE-2**: sobre bi-gramas
+- **ROUGE-L**: sobre subsequência mais longa comum
+- Quanto mais alto, melhor.
 
-### 2. **Média ponderada (macro e micro)**
-- Úteis para avaliar equilíbrio e impacto de classes desbalanceadas.
+### 2. **BLEU (opcional)**
+- Tradicionalmente usada em tradução, pode ser aplicada como comparação n-gram entre resumo gerado e referência.
 
-### 3. **Visualização de exemplo**
-- Textos com entidades destacadas, para validação qualitativa.
+### 3. **Avaliação Qualitativa (humana)**
+- Coerência, concisão e fidelidade ao texto original.
 
 ---
 
 ## 📝 Sugestão de Roteiro Técnico
 
-1. **Importação e exploração inicial do dataset**
-2. **Conversão para formato BIO (se necessário)**
-3. **Tokenização com modelo pré-treinado**
-4. **Definição de etiquetas e mapeamento de rótulos**
-5. **Fine-tuning com `Trainer` do Hugging Face**
-6. **Avaliação automática com `seqeval` ou similar**
-7. **Visualização de entidades extraídas**
-8. **Discussão dos resultados e limitações**
+1. **Importar e analisar o dataset de sumarização**
+2. **Tokenizar com modelo compatível (T5, BART ou mT5)**
+3. **Ajustar truncamento e padding (max_input_length, max_output_length)**
+4. **Aplicar fine-tuning supervisionado** com `Trainer`
+5. **Gerar resumos no conjunto de teste**
+6. **Avaliar com `rouge_score` e/ou `evaluate` da Hugging Face**
+7. **Mostrar exemplos comparando entrada, referência e saída gerada**
 
 ---
 
 ## 🧠 Modelos Recomendados
 
-- `pucpr/bert-base-portuguese-cased-ner` (já treinado para NER)
-- `pierreguillou/ner-bert-base-cased-pt`
-- `neuralmind/bert-base-portuguese-cased` (com fine-tuning)
-- `xlm-roberta-base` (multilíngue com bom desempenho em português)
+- `unicamp-dl/ptt5-base-portuguese-vocab` (T5 adaptado para português)
+- `csebuetnlp/mT5_multilingual_XLSum` (mT5 treinado para sumarização multilíngue)
+- `google/mt5-small` (pré-treinado multilíngue)
 
 ---
