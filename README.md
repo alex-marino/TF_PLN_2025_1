@@ -94,8 +94,8 @@ Os alunos devem escolher **uma** das temáticas abaixo para desenvolver o projet
 
 - **Discussão pré-projeto:** _[05/06/2025]_
 - **Discussão projeto:** _[12/06/2025]_
-- **Entrega do projeto final:** _[19/06/2025]_
-- **Apresentações:** _[19/06/2025]_
+- **Entrega do projeto final:** _[26/06/2025]_
+- **Apresentações:** _[26/06/2025]_
 
 ---
 
