@@ -77,13 +77,14 @@ Os alunos devem escolher **uma** das temáticas abaixo para desenvolver o projet
 |                  |                |               | Natali  |                 |         |
 
 
-| Grupo |   Tema |
-|:------|-------:|
-| G-01  |        |
-| G-02  |        |
-| G-03  |        |
-| G-04  |        |
-| G-05  |        |
+| Grupo |    Tema |
+|:------|--------:|
+| G-01  | 1, 4, 5 |
+| G-02  | 1, 3, 4 |
+| G-03  | 1, 3, 5 |
+| G-04  | 2, 3, 5 |
+| G-05  | 1, 2, 5 |
+| G-06  | 2, 4, 5 |
 
 
 
